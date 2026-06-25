@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>Invoice Generator</h1>
+      <p>Enter your company and client details, add items, and generate a printable invoice.</p>
+    </header>
+
+    <section class="card">
+      <h2>Company Information</h2>
+      <form id="company-form">
+        <div class="form-grid">
+          <label><span>Company Name</span><input id="companyName" type="text" placeholder="Acme LLC" required /></label>
+          <label><span>Address</span><input id="companyAddress" type="text" placeholder="123 Main St" /></label>
+          <label><span>Phone</span><input id="companyPhone" type="text" placeholder="(555) 123-4567" /></label>
+          <label><span>Email</span><input id="companyEmail" type="email" placeholder="billing@acme.com" /></label>
+          <label><span>Website</span><input id="companyWebsite" type="url" placeholder="https://acme.com" /></label>
+        </div>
+        <button type="button" id="saveCompanyBtn" class="primary-btn">Save Company Info</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Client & Invoice Details</h2>
+      <form id="invoice-form">
+        <div class="form-grid">
+          <label><span>Client Name</span><input id="clientName" type="text" placeholder="Client Co." required /></label>
+          <label><span>Client Address</span><input id="clientAddress" type="text" placeholder="456 Client Rd" /></label>
+          <label><span>Invoice Number</span><input id="invoiceNumber" type="text" placeholder="INV-1001" /></label>
+          <label><span>Invoice Date</span><input id="invoiceDate" type="date" /></label>
+          <label><span>Due Date</span><input id="dueDate" type="date" /></label>
+          <label><span>Notes</span><textarea id="invoiceNotes" rows="3" placeholder="Thank you for your business."></textarea></label>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Invoice Items</h2>
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="itemsBody"></tbody>
+      </table>
+      <button type="button" id="addItemBtn" class="secondary-btn">Add Item</button>
+      <div class="summary-row">
+        <span>Invoice Total</span>
+        <strong id="invoiceTotal">$0.00</strong>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="loadSavedBtn" class="secondary-btn">Load Saved Company Info</button>
+      <button id="generateBtn" class="primary-btn">Generate Invoice</button>
+    </section>
+
+    <section class="invoice-preview card hidden" id="invoicePreview">
+      <div class="invoice-header">
+        <div>
+          <h2>INVOICE</h2>
+          <p id="previewInvoiceNumber"></p>
+          <p id="previewInvoiceDate"></p>
+          <p id="previewDueDate"></p>
+        </div>
+        <div>
+          <p id="previewCompanyName"></p>
+          <p id="previewCompanyAddress"></p>
+          <p id="previewCompanyPhone"></p>
+          <p id="previewCompanyEmail"></p>
+          <p id="previewCompanyWebsite"></p>
+        </div>
+      </div>
+      <div class="preview-block">
+        <div>
+          <h3>Bill To</h3>
+          <p id="previewClientName"></p>
+          <p id="previewClientAddress"></p>
+        </div>
+      </div>
+      <table class="invoice-table preview-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="previewItems"></tbody>
+      </table>
+      <div class="summary-row preview-total">
+        <span>Total Due</span>
+        <strong id="previewInvoiceTotal"></strong>
+      </div>
+      <div class="preview-notes">
+        <h3>Notes</h3>
+        <p id="previewNotes"></p>
+      </div>
+      <button id="printBtn" class="primary-btn">Print Invoice</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
