@@ -66,7 +66,7 @@ function calculateTotals() {
 function createItemRow(item = { description: '', quantity: 1, unitPrice: 0 }) {
   const row = document.createElement('tr');
   row.innerHTML = `
-    <td><input type="text" class="item-desc" placeholder="Service description" value="${item.description}" /></td>
+    <td><input type="text" class="item-desc" placeholder="Website purchase or lease description" value="${item.description}" /></td>
     <td><input type="number" class="item-qty" min="0" value="${item.quantity}" /></td>
     <td><input type="number" class="item-price" min="0" step="0.01" value="${item.unitPrice}" /></td>
     <td class="item-total">$0.00</td>
