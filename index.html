@@ -10,29 +10,29 @@
   <div class="app-shell">
     <header>
       <h1>Invoice Generator</h1>
-      <p>Enter your company and client details, add items, and generate a printable invoice.</p>
+      <p>Enter your seller and buyer details, add website purchase or lease items, and generate a printable invoice.</p>
     </header>
 
     <section class="card">
-      <h2>Company Information</h2>
+      <h2>Seller Information</h2>
       <form id="company-form">
         <div class="form-grid">
-          <label><span>Company Name</span><input id="companyName" type="text" placeholder="Acme LLC" required /></label>
+          <label><span>Seller Name</span><input id="companyName" type="text" placeholder="John Doe" required /></label>
           <label><span>Address</span><input id="companyAddress" type="text" placeholder="123 Main St" /></label>
           <label><span>Phone</span><input id="companyPhone" type="text" placeholder="(555) 123-4567" /></label>
-          <label><span>Email</span><input id="companyEmail" type="email" placeholder="billing@acme.com" /></label>
-          <label><span>Website</span><input id="companyWebsite" type="url" placeholder="https://acme.com" /></label>
+          <label><span>Email</span><input id="companyEmail" type="email" placeholder="john@example.com" /></label>
+          <label><span>Website</span><input id="companyWebsite" type="url" placeholder="https://yourwebsite.com" /></label>
         </div>
-        <button type="button" id="saveCompanyBtn" class="primary-btn">Save Company Info</button>
+        <button type="button" id="saveCompanyBtn" class="primary-btn">Save Seller Info</button>
       </form>
     </section>
 
     <section class="card">
-      <h2>Client & Invoice Details</h2>
+      <h2>Buyer & Invoice Details</h2>
       <form id="invoice-form">
         <div class="form-grid">
-          <label><span>Client Name</span><input id="clientName" type="text" placeholder="Client Co." required /></label>
-          <label><span>Client Address</span><input id="clientAddress" type="text" placeholder="456 Client Rd" /></label>
+          <label><span>Buyer Name</span><input id="clientName" type="text" placeholder="Client Co." required /></label>
+          <label><span>Buyer Address</span><input id="clientAddress" type="text" placeholder="456 Client Rd" /></label>
           <label><span>Invoice Number</span><input id="invoiceNumber" type="text" placeholder="INV-1001" /></label>
           <label><span>Invoice Date</span><input id="invoiceDate" type="date" /></label>
           <label><span>Due Date</span><input id="dueDate" type="date" /></label>
